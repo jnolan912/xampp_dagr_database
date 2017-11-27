@@ -1,5 +1,5 @@
 <?php
-  $con=mysqli_connect("localhost","root","","my_test");
+  $con=mysqli_connect("localhost","root","","dagr");
   // Check connection
   if (mysqli_connect_errno()) {
     echo "Failed to connect to MySQL: " . mysqli_connect_error();
@@ -46,6 +46,3 @@
 
 <script src=../delete.js></script>
 <script src=../edit.js></script>
-
-
-
