@@ -1,0 +1,37 @@
+<html>
+    <head>
+        <title>Document Database</title>
+        <style type="text/css">
+            body {
+                margin: 10px;
+                white-space: nowrap;
+            }
+
+            iframe {
+                width: 100%;
+            }
+        </style>        
+    </head>
+
+    <script>alert(guid)</script>
+  
+    <body>
+        <h1>Edit Category</h1>
+        <!-- rename_category.php needs to be created -->
+        <form action="http://localhost/dagr_database/php/rename_category.php" method="POST">
+            Rename Category:<br>
+            <input type="text" name="category"><br>
+            <input type="submit" value="Go">
+        </form>
+
+        <h1>Edit Document</h1>
+        <!-- rename_category.php needs to be created -->
+        <form action="http://localhost/dagr_database/php/rename_category.php" method="POST">
+            Change Document Name:<br>
+            <input type="text" name="name"><br>
+            Change Document Category:<br>
+            <input type="text" name="category"><br>
+            <input type="submit" value="Go">
+        </form>
+    </body>
+</html>

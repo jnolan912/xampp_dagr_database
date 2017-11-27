@@ -1,0 +1,76 @@
+<!doctype html>
+
+<html>
+    <head>
+        <title>Document Database</title>
+        <style type="text/css">
+            body {
+                margin: 10px;
+                white-space: nowrap;
+            }
+
+            iframe {
+                width: 100%;
+            }
+        </style> 
+        <script src="homepage.js"></script>       
+    </head>
+  
+    <body>
+        
+        <h1>Document Database</h1>
+        <!--div id="insert-file-div">
+            <h2>Insert New File</h2>
+            <input type="file"/>
+            <button id="insert-file">Insert New File</button>
+            <form action="http://localhost/dagr_database/php/insert.php" method="POST" target="iframe">
+                <input type="text" name="name" placeholder="Document Name">
+                <input type="text" name="owner" placeholder="Owner">
+                <input type="submit" value="Go">
+            </form>
+        </div-->
+        <div id="orphan-sterile-div">
+            <h2>Orphan Sterile Report</h2>
+            <button id="orphan-sterile">Run Orphan Sterile Report</button>
+        </div>
+        <div id="duplicate-content-div">
+            <h2>Duplicate Content</h2>
+            <button id="duplicate-content">Identify Duplicate Content</button>
+        </div>
+        <div id="query-div">
+            <h2>Query</h2>
+            <form action="http://localhost/dagr_database/php/select.php" method="POST" target="iframe">
+                Document Name:<br>
+                <input type="text" name="name"><br>
+                File Extension:<br>
+                <input type="text" name="extension"><br>
+                Path:<br>
+                <input type="text" name="path"><br>
+                Owner:<br>
+                <input type="text" name="owner"><br>
+                Category:<br>
+                <input type="text" name="category"><br>
+                File Last Modified:<br>
+                <input type="datetime-local" name="startDateCreated">
+                <label>to</label>
+                <input type="datetime-local" name="endDateCreated"><br>
+                Added to DAGR:<br>                
+                <input type="datetime-local" name="startDateAdded">
+                <label>to</label>
+                <input type="datetime-local" name="endDateAdded"><br>
+                File Source:<br>
+                <input type="radio" name="source" value="local"> Local<br>
+                <input type="radio" name="source" value="web"> Web<br>
+                <input type="radio" name="source" value="either" checked> Either<br>
+                
+                <input type="submit" value="Go">
+            </form>
+        </div>
+        <iframe name='iframe' id='iframe'>
+            
+        </iframe>
+
+        
+        
+    </body>
+</html>
