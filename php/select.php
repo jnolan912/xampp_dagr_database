@@ -33,7 +33,7 @@
       echo '<td class="guid">' . $row['GUID'] . "</td>";
       echo "<td>" . $row['Name'] . "</td>";
       echo "<td>" . $row['Owner'] . "</td>";
-      echo "<td>" . $row['Timestamp'] . "</td>";
+      echo "<td>" . $row['Time_Added'] . "</td>";
       echo '<td class="edit"><img src="../icons/edit.png" alt="edit" id="edit"></td>';
       echo '<td class="delete"><img src="../icons/trash.png" alt="X" id="delete"></td>';
       echo "</tr>";
