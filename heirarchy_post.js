@@ -1,4 +1,4 @@
-function post(path, id, name, newWindow) {
+function openCategory(path, id, name, newWindow) {
     method = "post"; // Set method to post by default if not specified.
 
     // The rest of this code assumes you are not using a library.
@@ -25,9 +25,29 @@ function post(path, id, name, newWindow) {
     document.body.appendChild(form);
     form.submit();
 }
+
+function deleteCategory(path, id) {
+    method = "post"; // Set method to post by default if not specified.
+    
+    // The rest of this code assumes you are not using a library.
+    // It can be made less wordy if you use one.
+    var form = document.createElement("form");
+    form.setAttribute("method", method);
+    form.setAttribute("action", path);
+
+    var hiddenField = document.createElement("input");
+    hiddenField.setAttribute("type", "hidden");
+    hiddenField.setAttribute("name", "category_id");
+    hiddenField.setAttribute("value", id);
+    form.appendChild(hiddenField);
+
+    document.body.appendChild(form);
+    form.submit();
+}
+
 var button = document.getElementById("open-heirarchical-view");
 if (button) {
-    button.onclick = function() {post("http://localhost/xampp_dagr_database/php/select_category.php", -1, "Home", true)};
+    button.onclick = function() {openCategory("http://localhost/xampp_dagr_database/php/select_category.php", -1, "Home", true)};
 }
 
 var rows = document.getElementsByClassName("heir-row");
@@ -37,15 +57,9 @@ for (i = 0; i < rows.length; i++){
         function(row) 
         {
             return function() { 
-                post("http://localhost/xampp_dagr_database/php/select_category.php", row.id, row.innerHTML, false);
+                openCategory("http://localhost/xampp_dagr_database/php/select_category.php", row.id, row.innerHTML, false);
             };
         };
     currentRow.onclick = createClickHandler(currentRow.getElementsByTagName('td')[0]);
-
-
-   // rows[i].onclick = function(row) {
-        
-   //     post("http://localhost/xampp_dagr_database/php/select_category.php", 108, "Home")
-    //};
 }
 

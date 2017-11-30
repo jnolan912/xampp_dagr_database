@@ -16,8 +16,6 @@
 
 </style>
 
-<button>DELETE ALL RECORDS SHOWN</button>
-
 <table id="results" border=1>
   <tr>
     <th>GUID</th>
