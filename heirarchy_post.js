@@ -1,4 +1,4 @@
-function post(path, id, name) {
+function post(path, id, name, newWindow) {
     method = "post"; // Set method to post by default if not specified.
 
     // The rest of this code assumes you are not using a library.
@@ -6,7 +6,9 @@ function post(path, id, name) {
     var form = document.createElement("form");
     form.setAttribute("method", method);
     form.setAttribute("action", path);
-    form.setAttribute("target", "_blank");
+    if (newWindow){
+        form.setAttribute("target", "_blank");        
+    }
 
     var hiddenField = document.createElement("input");
     hiddenField.setAttribute("type", "hidden");
@@ -25,7 +27,7 @@ function post(path, id, name) {
 }
 var button = document.getElementById("open-heirarchical-view");
 if (button) {
-    button.onclick = function() {post("http://localhost/xampp_dagr_database/php/select_category.php", -1, "Home")};
+    button.onclick = function() {post("http://localhost/xampp_dagr_database/php/select_category.php", -1, "Home", true)};
 }
 
 var rows = document.getElementsByClassName("heir-row");
@@ -35,7 +37,7 @@ for (i = 0; i < rows.length; i++){
         function(row) 
         {
             return function() { 
-                post("http://localhost/xampp_dagr_database/php/select_category.php", row.id, row.innerHTML);
+                post("http://localhost/xampp_dagr_database/php/select_category.php", row.id, row.innerHTML, false);
             };
         };
     currentRow.onclick = createClickHandler(currentRow.getElementsByTagName('td')[0]);

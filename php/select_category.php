@@ -1,7 +1,5 @@
 <h1>Heirarchical View</h1>
 
-<button id="open-heirarchical-view">Back to Home Folder</button>
-
 <?php
     $name = $_POST['name'];
     echo "<h2>" . $name . "</h2>";
