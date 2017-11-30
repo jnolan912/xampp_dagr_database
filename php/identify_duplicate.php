@@ -13,7 +13,8 @@
         $oldid = $row["oldid"];
         $newid = $row["newid"];
         mysqli_query($con,"UPDATE document_category SET document_id = '$newid' WHERE document_id = '$oldid'");
-        mysqli_query($con,"DELETE FROM documents WHERE id = '$oldid'");        
+        mysqli_query($con,"DELETE FROM documents WHERE id = '$oldid'");
+        mysqli_query($con,"DELETE FROM document_category WHERE NOT EXISTS (SELECT id FROM documents WHERE id = document_id)");
     }
 
     if ($count == 0){
