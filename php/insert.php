@@ -3,7 +3,6 @@
     if (mysqli_connect_errno()) {
         echo "Failed to connect to MySQL: " . mysqli_connect_error();
     }
-    echo 'INSERTING';
 
     $name = mysqli_real_escape_string($con, $_POST['name']);
     $owner = mysqli_real_escape_string($con, $_POST['owner']);
