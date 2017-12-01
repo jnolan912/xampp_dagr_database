@@ -19,6 +19,7 @@
         echo "<td>" . $row['Name'] . "</td>";
         echo "<tr>";        
     }
+
     mysqli_close($con);
 ?>
 

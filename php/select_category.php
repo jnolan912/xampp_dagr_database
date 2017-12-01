@@ -4,6 +4,13 @@
     $name = $_POST['name'];
     echo "<h2>" . $name . "</h2>";
 ?>
+<?php if($_POST['category_id'] != -1) : ?>
+    <form action="http://localhost/xampp_dagr_database/php/delete_category.php" method="POST">
+        <input type="hidden" name="id" value="<?php echo $_POST['category_id'];?>">
+        <input type="checkbox" checked="checked" name="recursive">Recursive Delete</input><br>
+        <input type="submit" value="Delete">
+    </form>
+<?php endif; ?>
 
 <h3>Parent Categories</h3>
 <table>
