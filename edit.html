@@ -13,28 +13,20 @@
         </style>        
     </head>
 
-    <script>alert(guid)</script>
+    <script></script>
   
     <body>
-        <h1>Edit Category</h1>
-        <!-- rename_category.php needs to be created -->
-        <form action="http://localhost/dagr_database/php/rename_category.php" method="POST">
-            Rename Category:<br>
-            <input type="text" name="category"><br>
-            <input type="submit" value="Go">
-        </form>
-
         <h1>Edit Document</h1>
         <!-- rename_category.php needs to be created -->
-        <form action="http://localhost/dagr_database/php/rename_category.php" method="POST">
-            Change Document Name:<br>
-            <input type="text" name="name"><br>
-            Change Document Category:<br>
-            <input type="text" name="category"><br>
-            <!-- Comma Seperated list of keywords -->
-            Add Keywords:<br> 
-            <input type="text" name="keywords"><br>
+        <form action="http://localhost/xampp_dagr_database/php/insert_keyword.php" method="POST" target="iframe">
+            Add Keyword:<br>
+            <input type=hidden id="id">
+            <input type="text" name="keyword"><br>
             <input type="submit" value="Go">
         </form>
     </body>
+
+    <iframe name='iframe' id='iframe'></iframe>
+
+    <script src="edit_form.js"></script>               
 </html>

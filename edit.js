@@ -7,9 +7,9 @@ function addRowHandlers() {
             function(row) 
             {
                 return function() { 
-                    var guid = row.getElementsByTagName("td")[0].innerHTML;
-                    var w = window.open("../edit.html")
-                    w.guid = guid
+                    var id = row.id;
+                    var w = window.open("../edit.html");
+                    w.id = id;
                 };
             };
         currentRow.querySelector(".edit").onclick = createClickHandler(currentRow);
