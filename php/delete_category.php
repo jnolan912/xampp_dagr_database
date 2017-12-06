@@ -1,7 +1,6 @@
 <?php
     
     $category_id = $_POST['id'];
-    isset($_POST['recursive']);
 
     function delete($id, $is_recursive) {
         $con = mysqli_connect('localhost', 'root', '', 'dagr');
