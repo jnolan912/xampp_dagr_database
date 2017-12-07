@@ -12,6 +12,15 @@
     </form>
 <?php endif; ?>
 
+<h3>Reach Query</h3>
+<form action="http://localhost/xampp_dagr_database/php/reach.php" method="POST" target="_blank">
+    
+    <input type="number" name="up" value="1">Steps Up</input><br>
+    <input type="number" name="down" value="1">Steps Down</input><br>
+    <input type="hidden" name="id" value="<?php echo $_POST['category_id'];?>">
+    <input type="submit" value="Go">
+</form>
+
 <h3>Parent Categories</h3>
 <table>
     <?php
