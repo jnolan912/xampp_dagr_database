@@ -1,4 +1,3 @@
-
 function setId() {
     var hiddenField = document.getElementById('id')
     hiddenField.setAttribute("type", "hidden");

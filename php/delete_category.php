@@ -14,12 +14,11 @@
                 delete($row['Child_ID'], true);
             }
         }
-        $result = mysqli_query($con,"DELETE FROM categories WHERE category_id = '$id'");
+        $result = mysqli_query($con,"DELETE FROM ancestors WHERE child_id = '$id' OR parent_id = '$id'");                       
         $result = mysqli_query($con,"DELETE FROM document_category WHERE category_id = '$id'");
+        $result = mysqli_query($con,"DELETE FROM keywords WHERE document_id NOT IN (SELECT document_id FROM document_category)");                
         $result = mysqli_query($con,"DELETE FROM documents WHERE id NOT IN (SELECT document_id FROM document_category)");        
-        $result = mysqli_query($con,"DELETE FROM ancestors WHERE child_id = '$id' OR parent_id = '$id'");       
-        $result = mysqli_query($con,"DELETE FROM keywords WHERE document_id = '$id'");        
-        
+        $result = mysqli_query($con,"DELETE FROM categories WHERE category_id = '$id'");
         
         mysqli_close($con);        
     }
